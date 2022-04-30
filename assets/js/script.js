@@ -30,7 +30,7 @@ $("#searchBtn").on("click", function() {
   })
   .then(function (response){
 
-    let tempF = (response.main.temp - 273.15) * 1.80 + 32;
+   
  
     getCurrentConditions(response);
     getCurrentForecast(response);
@@ -52,7 +52,6 @@ $("#searchBtn").on("click", function() {
 
     $('#currentCity').empty();
 
-  
     var card = $("<div>").addClass("card");
     var cardBody = $("<div>").addClass("card-body");
     var city = $("<h4>").addClass("card-title").text(response.name);
@@ -85,13 +84,9 @@ function getCurrentForecast () {
  
     for (let i = 0; i < results.length; i++) {
 
-      let day = Number(results[i].dt_txt.split('-')[2].split(' ')[0]);
-      let hour = results[i].dt_txt.split('-')[2].split(' ')[1];
-   
 
       if(results[i].dt_txt.indexOf("12:00:00") !== -1){
-        
-      
+              
         let temp = (results[i].main.temp - 273.15) * 1.80 + 32;
         let tempF = Math.floor(temp);
 
@@ -100,7 +95,6 @@ function getCurrentForecast () {
         var cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString('en-US'));
         var temperature = $("<p>").addClass("card-text forecastTemp").text("Temperature: " + tempF + " °F");
         var humidity = $("<p>").addClass("card-text forecastHumidity").text("Humidity: " + results[i].main.humidity + "%");
-
         var image = $("<img>").attr("src", "https://openweathermap.org/img/w/" + results[i].weather[0].icon + ".png")
 
         cardBody.append(cityDate, image, temperature, humidity);
@@ -110,5 +104,5 @@ function getCurrentForecast () {
       }
     }
   });
-
+ 
 }
