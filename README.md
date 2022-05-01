@@ -1,18 +1,19 @@
 # Weather-Dashboard
 
 
-#Purpose
+# Purpose
+
 a website to provide weather for the city searched in the search form.
 
-#Built With
+# Built With
 HTML
 CSS
 JS
 
-#Website
+# Website
 https://mpeterson56.github.io/Weather-Dashboard/
 
-#Contribution
+# Contribution
 Made with ❤️ by [Michael Peterson]
 
 ©️2022 Mike Peterson, Inc
